@@ -11,7 +11,7 @@ namespace Assets.Editor
         // ReSharper disable once UnusedMember.Local
         static void Android()
         {
-            var outputPath = Environment.GetEnvironmentVariable("MHVILLE_APK_EXPORT_PATH", EnvironmentVariableTarget.Machine);
+            var outputPath = Environment.GetEnvironmentVariable("MHVILLE_APK_EXPORT_PATH");
 
             BuildPipeline.BuildPlayer(GetScenes(), outputPath + "demo.apk", BuildTarget.Android, BuildOptions.None);
         }
