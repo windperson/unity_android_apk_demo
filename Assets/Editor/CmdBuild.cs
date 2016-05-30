@@ -8,9 +8,12 @@ namespace Assets.Editor
 {
     public class CmdBuild
     {
+        // ReSharper disable once UnusedMember.Local
         static void Android()
         {
-            BuildPipeline.BuildPlayer(GetScenes(), "C:/temp/" + "demo.apk", BuildTarget.Android, BuildOptions.None);
+            var outputPath = Environment.GetEnvironmentVariable("MHVILLE_APK_EXPORT_PATH", EnvironmentVariableTarget.Machine);
+
+            BuildPipeline.BuildPlayer(GetScenes(), outputPath + "demo.apk", BuildTarget.Android, BuildOptions.None);
         }
 
         static string[] GetScenes()
